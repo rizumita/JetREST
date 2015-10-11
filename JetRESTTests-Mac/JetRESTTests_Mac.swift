@@ -1,15 +1,14 @@
 //
-//  JetRESTTests.swift
-//  JetRESTTests
+//  JetRESTTests_Mac.swift
+//  JetRESTTests-Mac
 //
-//  Created by 和泉田領一 on 2015/09/25.
+//  Created by 和泉田領一 on 2015/09/26.
 //  Copyright © 2015年 CAPH. All rights reserved.
 //
 
 import XCTest
-@testable import JetREST
 
-class JetRESTTests: XCTestCase {
+class JetRESTTests_Mac: XCTestCase {
     
     override func setUp() {
         super.setUp()

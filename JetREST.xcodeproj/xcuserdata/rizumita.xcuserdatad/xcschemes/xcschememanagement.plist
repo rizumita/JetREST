@@ -4,20 +4,60 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JetREST-Mac.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>JetREST-iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>JetREST.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>JetRESTTests-Mac.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>JetRESTTests-iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>6A33D9CD1BB63560006D0125</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6A33D9DC1BB6357A006D0125</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6A6C21CE1BB592590095464F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>6A6C21D81BB5925A0095464F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6A6C22041BB59A870095464F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6A6C22111BB59A920095464F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

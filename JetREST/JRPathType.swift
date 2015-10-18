@@ -1,5 +1,5 @@
 //
-//  RESTPathType.swift
+//  JRPathType.swift
 //  JetREST
 //
 //  Created by 和泉田領一 on 2015/09/29.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol RESTPathType: CustomStringConvertible {
+public protocol JRPathType: CustomStringConvertible {
     
     var rawPath: String { get }
     
@@ -18,7 +18,7 @@ public protocol RESTPathType: CustomStringConvertible {
     
 }
 
-public extension RESTPathType {
+public extension JRPathType {
     
     func expandPath(object object: Any) throws -> String {
         return try rawPath.componentsSeparatedByString("/").map { (component: String) -> String in
@@ -38,7 +38,7 @@ public extension RESTPathType {
     
 }
 
-extension String: RESTPathType {
+extension String: JRPathType {
     
     public var rawPath: String { return self }
     

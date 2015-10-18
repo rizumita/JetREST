@@ -10,26 +10,32 @@
 		1208E0CFADC6F1011E78F110 /* Pods_JetREST_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484BB7231DCF1DFF0F0DE76B /* Pods_JetREST_Mac.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		16A4C20EC98428ABA8F29033 /* Pods_JetRESTTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D027C9D220E19667C17C0C4 /* Pods_JetRESTTests_iOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		557C94743D0BB45782F1AAAB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7192DE02D098C88A17FD6E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6A20C1811BD3004200D3BC3A /* JRSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A20C1801BD3004200D3BC3A /* JRSerializer.swift */; settings = {ASSET_TAGS = (); }; };
+		6A20C1821BD3004600D3BC3A /* JRSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A20C1801BD3004200D3BC3A /* JRSerializer.swift */; settings = {ASSET_TAGS = (); }; };
+		6A20C1851BD30F6500D3BC3A /* JRRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C221A1BB59B8E0095464F /* JRRequestType.swift */; settings = {ASSET_TAGS = (); }; };
+		6A20C1861BD30F6500D3BC3A /* JRRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C221A1BB59B8E0095464F /* JRRequestType.swift */; settings = {ASSET_TAGS = (); }; };
+		6A20C1881BD3100800D3BC3A /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A20C1831BD305D100D3BC3A /* Pagination.swift */; settings = {ASSET_TAGS = (); }; };
 		6A33D9D11BB63560006D0125 /* JetRESTTests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33D9D01BB63560006D0125 /* JetRESTTests_iOS.swift */; };
 		6A33D9D31BB63560006D0125 /* JetREST.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6C22051BB59A870095464F /* JetREST.framework */; settings = {ASSET_TAGS = (); }; };
 		6A33D9E01BB6357A006D0125 /* JetRESTTests_Mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33D9DF1BB6357A006D0125 /* JetRESTTests_Mac.swift */; };
 		6A33D9E21BB6357A006D0125 /* JetREST.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6C22121BB59A920095464F /* JetREST.framework */; settings = {ASSET_TAGS = (); }; };
 		6A33D9EA1BB637C0006D0125 /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A33D9E91BB637C0006D0125 /* users.json */; settings = {ASSET_TAGS = (); }; };
-		6A33D9F01BB63BD6006D0125 /* RESTServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33D9EF1BB63BD6006D0125 /* RESTServiceType.swift */; settings = {ASSET_TAGS = (); }; };
-		6A33D9F11BB63BD6006D0125 /* RESTServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33D9EF1BB63BD6006D0125 /* RESTServiceType.swift */; settings = {ASSET_TAGS = (); }; };
+		6A33D9F01BB63BD6006D0125 /* JRServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33D9EF1BB63BD6006D0125 /* JRServiceType.swift */; settings = {ASSET_TAGS = (); }; };
+		6A33D9F11BB63BD6006D0125 /* JRServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33D9EF1BB63BD6006D0125 /* JRServiceType.swift */; settings = {ASSET_TAGS = (); }; };
 		6A33DA071BB68D3D006D0125 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33DA061BB68D3D006D0125 /* User.swift */; settings = {ASSET_TAGS = (); }; };
-		6A33DA0F1BB6CFC8006D0125 /* RESTResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33DA0E1BB6CFC8006D0125 /* RESTResourceType.swift */; settings = {ASSET_TAGS = (); }; };
-		6A33DA101BB6CFC8006D0125 /* RESTResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33DA0E1BB6CFC8006D0125 /* RESTResourceType.swift */; settings = {ASSET_TAGS = (); }; };
+		6A33DA0F1BB6CFC8006D0125 /* JRResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33DA0E1BB6CFC8006D0125 /* JRResourceType.swift */; settings = {ASSET_TAGS = (); }; };
+		6A33DA101BB6CFC8006D0125 /* JRResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33DA0E1BB6CFC8006D0125 /* JRResourceType.swift */; settings = {ASSET_TAGS = (); }; };
 		6A4323D61BB75D930046E637 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4323D51BB75D930046E637 /* Error.swift */; settings = {ASSET_TAGS = (); }; };
 		6A4323D71BB75D930046E637 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4323D51BB75D930046E637 /* Error.swift */; settings = {ASSET_TAGS = (); }; };
-		6A484F3F1BBAB3AE0021BD4A /* RESTPathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A484F3E1BBAB3AE0021BD4A /* RESTPathType.swift */; settings = {ASSET_TAGS = (); }; };
-		6A484F401BBAB3AE0021BD4A /* RESTPathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A484F3E1BBAB3AE0021BD4A /* RESTPathType.swift */; settings = {ASSET_TAGS = (); }; };
-		6A6C221B1BB59B8E0095464F /* RESTRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C221A1BB59B8E0095464F /* RESTRequestType.swift */; settings = {ASSET_TAGS = (); }; };
-		6A6C221C1BB59B8E0095464F /* RESTRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C221A1BB59B8E0095464F /* RESTRequestType.swift */; settings = {ASSET_TAGS = (); }; };
+		6A484F3F1BBAB3AE0021BD4A /* JRPathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A484F3E1BBAB3AE0021BD4A /* JRPathType.swift */; settings = {ASSET_TAGS = (); }; };
+		6A484F401BBAB3AE0021BD4A /* JRPathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A484F3E1BBAB3AE0021BD4A /* JRPathType.swift */; settings = {ASSET_TAGS = (); }; };
 		6A84D6D31BB813A60055FF4B /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84D6D21BB813A60055FF4B /* Fixture.swift */; settings = {ASSET_TAGS = (); }; };
 		6A84D6D41BB813A60055FF4B /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84D6D21BB813A60055FF4B /* Fixture.swift */; settings = {ASSET_TAGS = (); }; };
 		6A84D6D61BB815CA0055FF4B /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A84D6D51BB815CA0055FF4B /* user.json */; settings = {ASSET_TAGS = (); }; };
 		6A84D6D71BB815CA0055FF4B /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A84D6D51BB815CA0055FF4B /* user.json */; settings = {ASSET_TAGS = (); }; };
+		6AA8BCB41BD2F19E00E9B58B /* JRDecoderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA8BCB31BD2F19E00E9B58B /* JRDecoderType.swift */; settings = {ASSET_TAGS = (); }; };
+		6AFBBE3C1BC9F898000AEAE5 /* JRPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBBE3B1BC9F898000AEAE5 /* JRPaginator.swift */; settings = {ASSET_TAGS = (); }; };
+		6AFBBE3D1BC9F89A000AEAE5 /* JRPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBBE3B1BC9F898000AEAE5 /* JRPaginator.swift */; settings = {ASSET_TAGS = (); }; };
 		8EF51D4771F32D072BD1E685 /* Pods_JetRESTTests_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0ED6C6C8747C5FB8FB8DCD /* Pods_JetRESTTests_Mac.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -57,6 +63,8 @@
 		10B79383923885AE04BC9918 /* Pods-JetRESTTests-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetRESTTests-Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-JetRESTTests-Mac/Pods-JetRESTTests-Mac.release.xcconfig"; sourceTree = "<group>"; };
 		484BB7231DCF1DFF0F0DE76B /* Pods_JetREST_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetREST_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ACCC4449A9AAA13BEC5FF08 /* Pods-JetREST-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetREST-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JetREST-Mac/Pods-JetREST-Mac.debug.xcconfig"; sourceTree = "<group>"; };
+		6A20C1801BD3004200D3BC3A /* JRSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRSerializer.swift; sourceTree = "<group>"; };
+		6A20C1831BD305D100D3BC3A /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		6A33D9CE1BB63560006D0125 /* JetRESTTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JetRESTTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A33D9D01BB63560006D0125 /* JetRESTTests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetRESTTests_iOS.swift; sourceTree = "<group>"; };
 		6A33D9D21BB63560006D0125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,18 +72,20 @@
 		6A33D9DF1BB6357A006D0125 /* JetRESTTests_Mac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetRESTTests_Mac.swift; sourceTree = "<group>"; };
 		6A33D9E11BB6357A006D0125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A33D9E91BB637C0006D0125 /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
-		6A33D9EF1BB63BD6006D0125 /* RESTServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTServiceType.swift; sourceTree = "<group>"; };
+		6A33D9EF1BB63BD6006D0125 /* JRServiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRServiceType.swift; sourceTree = "<group>"; };
 		6A33DA061BB68D3D006D0125 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		6A33DA0E1BB6CFC8006D0125 /* RESTResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTResourceType.swift; sourceTree = "<group>"; };
+		6A33DA0E1BB6CFC8006D0125 /* JRResourceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRResourceType.swift; sourceTree = "<group>"; };
 		6A4323D51BB75D930046E637 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		6A484F3E1BBAB3AE0021BD4A /* RESTPathType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTPathType.swift; sourceTree = "<group>"; };
+		6A484F3E1BBAB3AE0021BD4A /* JRPathType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRPathType.swift; sourceTree = "<group>"; };
 		6A6C21D21BB5925A0095464F /* JetREST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JetREST.h; sourceTree = "<group>"; };
 		6A6C21D41BB5925A0095464F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A6C22051BB59A870095464F /* JetREST.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JetREST.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6C22121BB59A920095464F /* JetREST.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JetREST.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A6C221A1BB59B8E0095464F /* RESTRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTRequestType.swift; sourceTree = "<group>"; };
+		6A6C221A1BB59B8E0095464F /* JRRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRRequestType.swift; sourceTree = "<group>"; };
 		6A84D6D21BB813A60055FF4B /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		6A84D6D51BB815CA0055FF4B /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		6AA8BCB31BD2F19E00E9B58B /* JRDecoderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRDecoderType.swift; sourceTree = "<group>"; };
+		6AFBBE3B1BC9F898000AEAE5 /* JRPaginator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRPaginator.swift; sourceTree = "<group>"; };
 		6C90C840A2592EAC736E9037 /* Pods-JetRESTTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetRESTTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JetRESTTests-iOS/Pods-JetRESTTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6E0ED6C6C8747C5FB8FB8DCD /* Pods_JetRESTTests_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetRESTTests_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7192DE02D098C88A17FD6E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +139,7 @@
 				6A33D9D01BB63560006D0125 /* JetRESTTests_iOS.swift */,
 				6A33D9D21BB63560006D0125 /* Info.plist */,
 				6A33DA061BB68D3D006D0125 /* User.swift */,
+				6A20C1831BD305D100D3BC3A /* Pagination.swift */,
 				6A84D6D21BB813A60055FF4B /* Fixture.swift */,
 				6A33D9E91BB637C0006D0125 /* users.json */,
 				6A84D6D51BB815CA0055FF4B /* user.json */,
@@ -173,11 +184,14 @@
 			children = (
 				6A6C21D21BB5925A0095464F /* JetREST.h */,
 				6A6C21D41BB5925A0095464F /* Info.plist */,
-				6A33D9EF1BB63BD6006D0125 /* RESTServiceType.swift */,
-				6A33DA0E1BB6CFC8006D0125 /* RESTResourceType.swift */,
-				6A6C221A1BB59B8E0095464F /* RESTRequestType.swift */,
+				6A33D9EF1BB63BD6006D0125 /* JRServiceType.swift */,
+				6A33DA0E1BB6CFC8006D0125 /* JRResourceType.swift */,
+				6A6C221A1BB59B8E0095464F /* JRRequestType.swift */,
 				6A4323D51BB75D930046E637 /* Error.swift */,
-				6A484F3E1BBAB3AE0021BD4A /* RESTPathType.swift */,
+				6A484F3E1BBAB3AE0021BD4A /* JRPathType.swift */,
+				6AFBBE3B1BC9F898000AEAE5 /* JRPaginator.swift */,
+				6A20C1801BD3004200D3BC3A /* JRSerializer.swift */,
+				6AA8BCB31BD2F19E00E9B58B /* JRDecoderType.swift */,
 			);
 			path = JetREST;
 			sourceTree = "<group>";
@@ -548,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A33D9D11BB63560006D0125 /* JetRESTTests_iOS.swift in Sources */,
+				6A20C1881BD3100800D3BC3A /* Pagination.swift in Sources */,
 				6A33DA071BB68D3D006D0125 /* User.swift in Sources */,
 				6A84D6D31BB813A60055FF4B /* Fixture.swift in Sources */,
 			);
@@ -566,11 +581,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A33D9F01BB63BD6006D0125 /* RESTServiceType.swift in Sources */,
-				6A6C221B1BB59B8E0095464F /* RESTRequestType.swift in Sources */,
+				6A33D9F01BB63BD6006D0125 /* JRServiceType.swift in Sources */,
+				6AA8BCB41BD2F19E00E9B58B /* JRDecoderType.swift in Sources */,
+				6A20C1811BD3004200D3BC3A /* JRSerializer.swift in Sources */,
 				6A4323D61BB75D930046E637 /* Error.swift in Sources */,
-				6A484F3F1BBAB3AE0021BD4A /* RESTPathType.swift in Sources */,
-				6A33DA0F1BB6CFC8006D0125 /* RESTResourceType.swift in Sources */,
+				6AFBBE3C1BC9F898000AEAE5 /* JRPaginator.swift in Sources */,
+				6A20C1851BD30F6500D3BC3A /* JRRequestType.swift in Sources */,
+				6A484F3F1BBAB3AE0021BD4A /* JRPathType.swift in Sources */,
+				6A33DA0F1BB6CFC8006D0125 /* JRResourceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,11 +596,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A33D9F11BB63BD6006D0125 /* RESTServiceType.swift in Sources */,
-				6A6C221C1BB59B8E0095464F /* RESTRequestType.swift in Sources */,
+				6A20C1821BD3004600D3BC3A /* JRSerializer.swift in Sources */,
+				6A33D9F11BB63BD6006D0125 /* JRServiceType.swift in Sources */,
 				6A4323D71BB75D930046E637 /* Error.swift in Sources */,
-				6A484F401BBAB3AE0021BD4A /* RESTPathType.swift in Sources */,
-				6A33DA101BB6CFC8006D0125 /* RESTResourceType.swift in Sources */,
+				6A20C1861BD30F6500D3BC3A /* JRRequestType.swift in Sources */,
+				6AFBBE3D1BC9F89A000AEAE5 /* JRPaginator.swift in Sources */,
+				6A484F401BBAB3AE0021BD4A /* JRPathType.swift in Sources */,
+				6A33DA101BB6CFC8006D0125 /* JRResourceType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

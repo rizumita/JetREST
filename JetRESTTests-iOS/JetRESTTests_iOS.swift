@@ -12,19 +12,21 @@ import OHHTTPStubs
 import Himotoki
 import Alamofire
 
-protocol TestResourceType: RESTResourceType {
+protocol TestResourceType: JRResourceType {
     typealias ServiceType = TestService
+    typealias RequestType = JRRequest
 }
 
-struct TestService: RESTServiceType {
+struct TestService: JRServiceType {
     static let baseURL: NSURL? = NSURL(string: "https://example.com/api")
-
-    struct UsersResource: TestResourceType, RESTGet {
-        static let path: RESTPathType = "/users"
+    
+    struct UsersResource: TestResourceType, JRPaginate {
+        static let path: JRPathType = "/users"
+        static var pageSerializer = JSONPageSerializer(contentsDecoder: JSONDecoder(keyPath: "users") { try decodeArray($0) as [User] }, paginationDecoder: JSONPaginationDecoder(keyPath: "pagination") { try decode($0) as Pagination })
     }
     
-    struct UserResource: TestResourceType, RESTGet, RESTPost {
-        static let path: RESTPathType = "/user/:id"
+    struct UserResource: TestResourceType, JRGet, JRPost {
+        static let path: JRPathType = "/user/:id"
     }
 }
 
@@ -43,16 +45,19 @@ class JetRESTTests_iOS: XCTestCase {
     
     func testGetUsers() {
         fix(usersGetFixture)
-
+        
         let expectation = expectationWithDescription("get users")
-
-        try! TestService.UsersResource.get().execute(serializer: JSONSerializer<[User]>(decoder: { try decodeArray($0) as [User] })) { response in
-            switch response.result {
-            case .Success(let users):
+        
+        try! TestService.UsersResource.paginate().loadNextPage { (result: Result<([User], Pagination), JetRESTError>) -> Void in
+            switch result {
+            case .Success(let users, let pagination):
                 XCTAssertEqual(users.count, 1)
                 XCTAssertEqual(users.first!.id, 123)
                 XCTAssertEqual(users.first!.name, "rizumita")
                 XCTAssertEqual(users.first!.sex, Sex.Male)
+                XCTAssertEqual(pagination.total, 14)
+                XCTAssertEqual(pagination.totalPages, 1)
+                XCTAssertEqual(pagination.offset, 0)
                 expectation.fulfill()
             case .Failure(let e):
                 print(e)

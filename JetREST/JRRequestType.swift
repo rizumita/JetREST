@@ -1,5 +1,5 @@
 //
-//  RESTRequestType.swift
+//  JRRequestType.swift
 //  JetREST
 //
 //  Created by 和泉田領一 on 2015/09/26.
@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-public protocol RESTRequestType {
+public protocol JRRequestType {
     
     var method: Alamofire.Method { get }
     
@@ -20,32 +20,26 @@ public protocol RESTRequestType {
     var parameterEncoding: ParameterEncoding { get }
     
     var headers: [String : String]? { get }
-    
-    var rawRequest: Alamofire.Request { get }
-    
-    func execute<T: ResponseSerializerType>(serializer serializer: T?, queue: dispatch_queue_t, completion: (Response<T.SerializedObject, T.ErrorObject> -> Void)?)
+
+    func execute<T: ResponseSerializerType>(serializer serializer: T, queue: dispatch_queue_t, completion: (Response<T.SerializedObject, T.ErrorObject> -> Void))
     
     init(method: Alamofire.Method, URL: URLStringConvertible, parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?)
 
 }
 
-extension RESTRequestType {
+extension JRRequestType {
 
     public var rawRequest: Alamofire.Request {
         return Alamofire.request(method, URL, parameters: parameters, encoding: parameterEncoding, headers: headers)
     }
     
-    public func execute<T: ResponseSerializerType>(serializer serializer: T?, queue: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), completion: (Response<T.SerializedObject, T.ErrorObject> -> Void)?) {
-        if let serializer = serializer, let completion = completion {
-            rawRequest.response(queue: queue, responseSerializer: serializer, completionHandler: completion)
-        } else {
-            rawRequest.response(queue: queue, completionHandler: { (_, _, _, _) -> Void in })
-        }
+    public func execute<T: ResponseSerializerType>(serializer serializer: T, queue: dispatch_queue_t = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), completion: (Response<T.SerializedObject, T.ErrorObject> -> Void) = {_ in}) {
+        Alamofire.request(method, URL, parameters: parameters, encoding: parameterEncoding, headers: headers).response(queue: queue, responseSerializer: serializer, completionHandler: completion)
     }
 
 }
 
-public struct RESTRequest: RESTRequestType {
+public struct JRRequest: JRRequestType {
     
     public let method: Alamofire.Method
     
@@ -56,8 +50,6 @@ public struct RESTRequest: RESTRequestType {
     public let parameterEncoding: ParameterEncoding
     
     public let headers: [String : String]?
-    
-    public let rawRequest: Alamofire.Request
 
     public init(method: Alamofire.Method, URL: URLStringConvertible, parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) {
         self.method = method
@@ -65,7 +57,6 @@ public struct RESTRequest: RESTRequestType {
         self.parameters = parameters
         self.parameterEncoding = parameterEncoding
         self.headers = headers
-        self.rawRequest = Alamofire.request(method, URL, parameters: parameters, encoding: parameterEncoding, headers: headers)
     }
 
 }

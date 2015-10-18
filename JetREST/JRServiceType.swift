@@ -1,5 +1,5 @@
 //
-//  RESTServiceType.swift
+//  JRServiceType.swift
 //  JetREST
 //
 //  Created by 和泉田領一 on 2015/09/26.
@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-public protocol RESTServiceType {
+public protocol JRServiceType {
     
     static var baseURL: NSURL? { get }
     

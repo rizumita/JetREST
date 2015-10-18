@@ -1,7 +1,14 @@
-[
- {
- "id": 123,
- "name": "rizumita",
- "sex": 0,
- }
- ]
+{
+"pagination": {
+"total": 14,
+"total_pages": 1,
+"offset": 0,
+},
+"users": [
+    {
+        "id": 123,
+        "name": "rizumita",
+        "sex": 0,
+    }
+    ]
+}

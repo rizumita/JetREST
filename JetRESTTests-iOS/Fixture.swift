@@ -10,7 +10,7 @@ import Foundation
 import OHHTTPStubs
 import Alamofire
 
-let usersGetFixture = Fixture(filename: "users.json", URL: NSURL(string: "https://example.com/api/users")!)
+let usersGetFixture = Fixture(filename: "users.json", URL: NSURL(string: "https://example.com/api/users?page=1")!)
 let userGetFixture: Int -> Fixture = { Fixture(filename: "user.json", URL: NSURL(string: "https://example.com/api/user/\($0)")!, replaced: ["@id" : "\($0)"]) }
 
 func fix(fixture: Fixture) {

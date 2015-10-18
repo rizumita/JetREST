@@ -17,6 +17,10 @@ public enum JetRESTError: ErrorType {
     case GeneralError(NSError)
     case PatternSearchError(value: Any, key: String)
     case ConvertCustomStringConvertibleError(value: Any)
+    case DecodingError
+    case PaginationTypeError
+    case PaginationError
+    case PageOverflowError
     case UnknownError
     
 }

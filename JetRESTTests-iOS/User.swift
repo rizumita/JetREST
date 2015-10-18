@@ -10,7 +10,7 @@ import Foundation
 @testable import JetREST
 import Himotoki
 
-enum Sex: Int {
+enum Sex: Int, Decodable {
 
     case Male = 0, Female = 1, Unknown = 2
     
@@ -33,17 +33,17 @@ struct User: Decodable {
     let name: String
     let sex: Sex
     
-    init(id: Int, name: String, sex: Int? = 2) {
+    init(id: Int, name: String, sex: Sex) {
         self.id = id
         self.name = name
-        self.sex = Sex.get(sex)
+        self.sex = sex
     }
     
     static func decode(e: Extractor) throws -> User {
         return try build(User.init)(
             e <| "id",
             e <| "name",
-            e <|? "sex"
+            e <| "sex"
         )
     }
 

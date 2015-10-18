@@ -9,23 +9,22 @@
 import Foundation
 import Alamofire
 
-public struct JRPaginator<S: JRPageSerializerType> {
-
-    var request: JRRequest
-
-    var serializer: S
+public struct JRPaginator<Q: JRPageRequestType> {
     
-    var pagination: S.PaginationDecoderType.ContentType?
+    typealias RequestType = Q
 
-    func loadNextPage(handler: Result<S.SerializedObject, S.ErrorObject> -> Void) throws {
-        try S.PaginationDecoderType.ContentType.nextPageRequest(pagination: pagination, previousRequest: request).execute(serializer: serializer, queue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { (response: Response<S.SerializedObject, S.ErrorObject>) -> Void in
+    var request: RequestType
+    
+    var pagination: Q.SerializerType.PaginationDecoderType.ContentType?
+
+    func loadNextPage(handler: Result<Q.SerializerType.SerializedObject, Q.SerializerType.ErrorObject> -> Void) throws {
+        try Q.SerializerType.PaginationDecoderType.ContentType.nextPageRequest(pagination: pagination, previousRequest: request).execute(queue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { (response: Response<Q.SerializerType.SerializedObject, Q.SerializerType.ErrorObject>) -> Void in
             handler(response.result)
         }
     }
     
-    init(request: JRRequest, serializer: S) {
+    init(request: Q) {
         self.request = request
-        self.serializer = serializer
     }
     
 }

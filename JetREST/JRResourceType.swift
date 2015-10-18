@@ -15,90 +15,88 @@ public protocol JRResourceType {
 
     static var path: JRPathType { get }
     
-    static func request(method method: Alamofire.Method, URL: URLStringConvertible, parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) -> JRRequestType
-    
-}
-
-public extension JRResourceType {
-    
-    static func request(method method: Alamofire.Method, URL: URLStringConvertible, parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) -> JRRequestType {
-        return JRRequest(method: method, URL: URL, parameters: parameters, parameterEncoding: parameterEncoding, headers: headers)
-    }
-    
 }
 
 public protocol JRGet: JRResourceType {
     
-    static func get(parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequestType
-    
-    static func get(object object: Any, parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequestType
+    typealias GetSerializerType: JRSerializerType
 
-    static func get(dictionary dictionary: [String : AnyObject], parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequestType
+    static var getSerializer: GetSerializerType { get }
+
+    static func get(parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequest<GetSerializerType>
+    
+    static func get(object object: Any, parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequest<GetSerializerType>
+
+    static func get(dictionary dictionary: [String : AnyObject], parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequest<GetSerializerType>
 
 }
 
 extension JRGet {
 
-    static func get(parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRRequestType {
+    static func get(parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRRequest<GetSerializerType> {
         guard let baseURL = ServiceType.baseURL else {
             throw JetRESTError.BaseURLError
         }
         
-        return request(method: .GET, URL: baseURL.URLByAppendingPathComponent(path.rawPath), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers)
+        return JRRequest(method: .GET, URL: baseURL.URLByAppendingPathComponent(path.rawPath), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers, serializer: getSerializer)
     }
 
-    static func get(object object: Any, parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRRequestType {
+    static func get(object object: Any, parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRRequest<GetSerializerType> {
         guard let baseURL = ServiceType.baseURL else {
             throw JetRESTError.BaseURLError
         }
         
-        return request(method: .GET, URL: baseURL.URLByAppendingPathComponent(try path.expandPath(object: object)), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers)
+        return JRRequest(method: .GET, URL: baseURL.URLByAppendingPathComponent(try path.expandPath(object: object)), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers, serializer: getSerializer)
     }
 
-    static func get(dictionary dictionary: [String : AnyObject], parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRRequestType {
+    static func get(dictionary dictionary: [String : AnyObject], parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRRequest<GetSerializerType> {
         guard let baseURL = ServiceType.baseURL else {
             throw JetRESTError.BaseURLError
         }
         
-        return request(method: .GET, URL: baseURL.URLByAppendingPathComponent(try path.expandPath(dictionary: dictionary)), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers)
+        return JRRequest(method: .GET, URL: baseURL.URLByAppendingPathComponent(try path.expandPath(dictionary: dictionary)), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers, serializer: getSerializer)
     }
 
 }
 
 public protocol JRPost: JRResourceType {
+    
+    typealias PostSerializerType: JRSerializerType
+    
+    static var postSerializer: PostSerializerType { get }
 
-    static func post(parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequestType
+    static func post(parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequest<PostSerializerType>
 
-    static func post(object object: Any, parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequestType
+    static func post(object object: Any, parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequest<PostSerializerType>
 
-    static func post(dictionary dictionary: [String : AnyObject], parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequestType
+    static func post(dictionary dictionary: [String : AnyObject], parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequest<PostSerializerType>
 
 }
 
 extension JRPost {
 
-    static func post(parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequestType {
+    static func post(parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRRequest<PostSerializerType> {
         guard let baseURL = ServiceType.baseURL else {
             throw JetRESTError.BaseURLError
         }
         
-        return request(method: .POST, URL: baseURL.URLByAppendingPathComponent(path.rawPath), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers)
+        return JRRequest(method: .POST, URL: baseURL.URLByAppendingPathComponent(path.rawPath), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers, serializer: postSerializer)
     }
 
-    static func post(object object: Any, parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequestType {
+    static func post(object object: Any, parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRRequest<PostSerializerType> {
         guard let baseURL = ServiceType.baseURL else {
             throw JetRESTError.BaseURLError
         }
-        
-        return request(method: .POST, URL: baseURL.URLByAppendingPathComponent(try path.expandPath(object: object)), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers)
+
+        return JRRequest(method: .POST, URL: baseURL.URLByAppendingPathComponent(try path.expandPath(object: object)), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers, serializer: postSerializer)
     }
     
-    static func post(dictionary dictionary: [String : AnyObject], parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRRequestType {
+    static func post(dictionary dictionary: [String : AnyObject], parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRRequest<PostSerializerType> {
         guard let baseURL = ServiceType.baseURL else {
             throw JetRESTError.BaseURLError
         }
         
-        return request(method: .POST, URL: baseURL.URLByAppendingPathComponent(try path.expandPath(dictionary: dictionary)), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers)
+        return JRRequest(method: .POST, URL: baseURL.URLByAppendingPathComponent(try path.expandPath(dictionary: dictionary)), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers, serializer: postSerializer)
     }
 
 }
@@ -109,18 +107,18 @@ public protocol JRPaginate: JRResourceType {
     
     static var pageSerializer: PageSerializerType { get }
 
-    static func paginate(parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRPaginator<PageSerializerType>
+    static func paginate(parameters: [String : AnyObject]?, parameterEncoding: ParameterEncoding, headers: [String : String]?) throws -> JRPaginator<JRPageRequest<PageSerializerType>>
     
 }
 
 extension JRPaginate {
     
-    static func paginate(parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRPaginator<PageSerializerType> {
+    static func paginate(parameters: [String : AnyObject]? = nil, parameterEncoding: ParameterEncoding = .URL, headers: [String : String]? = nil) throws -> JRPaginator<JRPageRequest<PageSerializerType>> {
         guard let baseURL = ServiceType.baseURL else {
             throw JetRESTError.BaseURLError
         }
         
-        return JRPaginator(request: request(method: .GET, URL: baseURL.URLByAppendingPathComponent(path.rawPath), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers) as! JRRequest, serializer: pageSerializer)
+        return JRPaginator(request: JRPageRequest(method: .GET, URL: baseURL.URLByAppendingPathComponent(path.rawPath), parameters: parameters, parameterEncoding: parameterEncoding, headers: headers, serializer: pageSerializer))
     }
     
 }

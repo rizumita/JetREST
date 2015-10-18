@@ -15,6 +15,7 @@
 		6A20C1851BD30F6500D3BC3A /* JRRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C221A1BB59B8E0095464F /* JRRequestType.swift */; settings = {ASSET_TAGS = (); }; };
 		6A20C1861BD30F6500D3BC3A /* JRRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C221A1BB59B8E0095464F /* JRRequestType.swift */; settings = {ASSET_TAGS = (); }; };
 		6A20C1881BD3100800D3BC3A /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A20C1831BD305D100D3BC3A /* Pagination.swift */; settings = {ASSET_TAGS = (); }; };
+		6A20C18A1BD32F0200D3BC3A /* user_post.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A20C1891BD32F0200D3BC3A /* user_post.json */; settings = {ASSET_TAGS = (); }; };
 		6A33D9D11BB63560006D0125 /* JetRESTTests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33D9D01BB63560006D0125 /* JetRESTTests_iOS.swift */; };
 		6A33D9D31BB63560006D0125 /* JetREST.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6C22051BB59A870095464F /* JetREST.framework */; settings = {ASSET_TAGS = (); }; };
 		6A33D9E01BB6357A006D0125 /* JetRESTTests_Mac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A33D9DF1BB6357A006D0125 /* JetRESTTests_Mac.swift */; };
@@ -31,8 +32,8 @@
 		6A484F401BBAB3AE0021BD4A /* JRPathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A484F3E1BBAB3AE0021BD4A /* JRPathType.swift */; settings = {ASSET_TAGS = (); }; };
 		6A84D6D31BB813A60055FF4B /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84D6D21BB813A60055FF4B /* Fixture.swift */; settings = {ASSET_TAGS = (); }; };
 		6A84D6D41BB813A60055FF4B /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84D6D21BB813A60055FF4B /* Fixture.swift */; settings = {ASSET_TAGS = (); }; };
-		6A84D6D61BB815CA0055FF4B /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A84D6D51BB815CA0055FF4B /* user.json */; settings = {ASSET_TAGS = (); }; };
-		6A84D6D71BB815CA0055FF4B /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A84D6D51BB815CA0055FF4B /* user.json */; settings = {ASSET_TAGS = (); }; };
+		6A84D6D61BB815CA0055FF4B /* user_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A84D6D51BB815CA0055FF4B /* user_get.json */; settings = {ASSET_TAGS = (); }; };
+		6A84D6D71BB815CA0055FF4B /* user_get.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A84D6D51BB815CA0055FF4B /* user_get.json */; settings = {ASSET_TAGS = (); }; };
 		6AA8BCB41BD2F19E00E9B58B /* JRDecoderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA8BCB31BD2F19E00E9B58B /* JRDecoderType.swift */; settings = {ASSET_TAGS = (); }; };
 		6AFBBE3C1BC9F898000AEAE5 /* JRPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBBE3B1BC9F898000AEAE5 /* JRPaginator.swift */; settings = {ASSET_TAGS = (); }; };
 		6AFBBE3D1BC9F89A000AEAE5 /* JRPaginator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFBBE3B1BC9F898000AEAE5 /* JRPaginator.swift */; settings = {ASSET_TAGS = (); }; };
@@ -65,6 +66,7 @@
 		4ACCC4449A9AAA13BEC5FF08 /* Pods-JetREST-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetREST-Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JetREST-Mac/Pods-JetREST-Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		6A20C1801BD3004200D3BC3A /* JRSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRSerializer.swift; sourceTree = "<group>"; };
 		6A20C1831BD305D100D3BC3A /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		6A20C1891BD32F0200D3BC3A /* user_post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_post.json; sourceTree = "<group>"; };
 		6A33D9CE1BB63560006D0125 /* JetRESTTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "JetRESTTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A33D9D01BB63560006D0125 /* JetRESTTests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetRESTTests_iOS.swift; sourceTree = "<group>"; };
 		6A33D9D21BB63560006D0125 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,7 +85,7 @@
 		6A6C22121BB59A920095464F /* JetREST.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JetREST.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6C221A1BB59B8E0095464F /* JRRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRRequestType.swift; sourceTree = "<group>"; };
 		6A84D6D21BB813A60055FF4B /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
-		6A84D6D51BB815CA0055FF4B /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
+		6A84D6D51BB815CA0055FF4B /* user_get.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_get.json; sourceTree = "<group>"; };
 		6AA8BCB31BD2F19E00E9B58B /* JRDecoderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRDecoderType.swift; sourceTree = "<group>"; };
 		6AFBBE3B1BC9F898000AEAE5 /* JRPaginator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JRPaginator.swift; sourceTree = "<group>"; };
 		6C90C840A2592EAC736E9037 /* Pods-JetRESTTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JetRESTTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JetRESTTests-iOS/Pods-JetRESTTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,7 +144,8 @@
 				6A20C1831BD305D100D3BC3A /* Pagination.swift */,
 				6A84D6D21BB813A60055FF4B /* Fixture.swift */,
 				6A33D9E91BB637C0006D0125 /* users.json */,
-				6A84D6D51BB815CA0055FF4B /* user.json */,
+				6A84D6D51BB815CA0055FF4B /* user_get.json */,
+				6A20C1891BD32F0200D3BC3A /* user_post.json */,
 			);
 			path = "JetRESTTests-iOS";
 			sourceTree = "<group>";
@@ -374,8 +377,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A84D6D61BB815CA0055FF4B /* user.json in Resources */,
+				6A84D6D61BB815CA0055FF4B /* user_get.json in Resources */,
 				6A33D9EA1BB637C0006D0125 /* users.json in Resources */,
+				6A20C18A1BD32F0200D3BC3A /* user_post.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A84D6D71BB815CA0055FF4B /* user.json in Resources */,
+				6A84D6D71BB815CA0055FF4B /* user_get.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

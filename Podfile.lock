@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (3.0.0-beta.1)
-  - Himotoki (1.0.0)
+  - Himotoki (1.1.0)
   - OHHTTPStubs (4.3.0):
     - OHHTTPStubs/Default (= 4.3.0)
   - OHHTTPStubs/Core (4.3.0)
@@ -22,7 +22,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: b1b493dfb758bb73e6eafce616ea529aca18b2ad
-  Himotoki: 248b55af276aef1af1a326e918aed30bc5ee25dd
+  Himotoki: a15cb17fafe96a86bef9229c25cf0d1d0f6b32dc
   OHHTTPStubs: 0aec5755528693a165bd616cb79f69387de306a8
 
 COCOAPODS: 0.38.2

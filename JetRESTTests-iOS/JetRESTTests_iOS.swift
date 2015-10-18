@@ -14,7 +14,6 @@ import Alamofire
 
 protocol TestResourceType: JRResourceType {
     typealias ServiceType = TestService
-    typealias RequestType = JRRequest
 }
 
 struct TestService: JRServiceType {
@@ -26,6 +25,8 @@ struct TestService: JRServiceType {
     }
     
     struct UserResource: TestResourceType, JRGet, JRPost {
+        static let getSerializer = JSONSerializer(contentsDecoder: JSONDecoder { try decode($0) as User })
+        static let postSerializer = JSONSerializer(contentsDecoder: JSONDecoder { try decode($0) as User })
         static let path: JRPathType = "/user/:id"
     }
 }
@@ -74,7 +75,7 @@ class JetRESTTests_iOS: XCTestCase {
         
         let expectation = expectationWithDescription("get user")
         
-        try! TestService.UserResource.get(dictionary: ["id" : id]).execute(serializer: JSONSerializer(decoder: { try decode($0) as User })) { response in
+        try! TestService.UserResource.get(dictionary: ["id" : id]).execute { response in
             switch response.result {
             case .Success(let object):
                 XCTAssertEqual(object.id, id)
@@ -85,6 +86,30 @@ class JetRESTTests_iOS: XCTestCase {
                 XCTFail()
             }
             expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(3.0, handler: nil)
+    }
+    
+    func testPostUser() {
+        let id = 100
+        fix(userPostFixture(id))
+        
+        let expectation = expectationWithDescription("post user")
+        
+        let user = User(id: id, name: "ryoichi", sex: .Male)
+        
+        try! TestService.UserResource.post(object: user).execute { response in
+            switch response.result {
+            case .Success(let object):
+                XCTAssert(object.id == 100)
+                XCTAssert(object.name == "ryoichi")
+                XCTAssert(object.sex == .Male)
+                expectation.fulfill()
+            case .Failure(let e):
+                print(e)
+                XCTFail()
+            }
         }
         
         waitForExpectationsWithTimeout(3.0, handler: nil)

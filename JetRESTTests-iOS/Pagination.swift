@@ -16,12 +16,6 @@ struct Pagination: JRPaginationType, Decodable {
     let totalPages: Int
     let offset: Int
     
-//    static func firstPageRequest<Q: JRRequestType>(baseRequset: Q) -> Q {
-//        var parameters = baseRequset.parameters ?? [String : AnyObject]()
-//        parameters["page"] = 1
-//        return Q(method: baseRequset.method, URL: baseRequset.URL, parameters: parameters, parameterEncoding: baseRequset.parameterEncoding, headers: baseRequset.headers)
-//    }
-//
     static func nextPageRequest<P: JRPaginationType, Q: JRRequestType>(pagination pagination: P?, previousRequest: Q) throws -> Q {
         guard pagination == nil || pagination is Pagination else {
             throw JetRESTError.PaginationTypeError
@@ -43,7 +37,7 @@ struct Pagination: JRPaginationType, Decodable {
             parameters["page"] = 1
         }
         
-        return Q(method: previousRequest.method, URL: previousRequest.URL, parameters: parameters, parameterEncoding: previousRequest.parameterEncoding, headers: previousRequest.headers)
+        return Q(method: previousRequest.method, URL: previousRequest.URL, parameters: parameters, parameterEncoding: previousRequest.parameterEncoding, headers: previousRequest.headers, serializer: previousRequest.serializer)
     }
 
     init(total: Int, totalPages: Int, offset: Int) {

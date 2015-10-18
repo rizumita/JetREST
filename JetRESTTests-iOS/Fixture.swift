@@ -11,7 +11,8 @@ import OHHTTPStubs
 import Alamofire
 
 let usersGetFixture = Fixture(filename: "users.json", URL: NSURL(string: "https://example.com/api/users?page=1")!)
-let userGetFixture: Int -> Fixture = { Fixture(filename: "user.json", URL: NSURL(string: "https://example.com/api/user/\($0)")!, replaced: ["@id" : "\($0)"]) }
+let userGetFixture: Int -> Fixture = { Fixture(filename: "user_get.json", URL: NSURL(string: "https://example.com/api/user/\($0)")!, replaced: ["@id" : "\($0)"]) }
+let userPostFixture: Int -> Fixture = { Fixture(filename: "user_post.json", URL: NSURL(string: "https://example.com/api/user/\($0)")!, method: .POST, replaced: ["@id" : "\($0)"]) }
 
 func fix(fixture: Fixture) {
     OHHTTPStubs.stubRequestsPassingTest({ (request: NSURLRequest) -> Bool in

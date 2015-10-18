@@ -9,12 +9,46 @@
 import Foundation
 import Alamofire
 
-public protocol JRPageSerializerType: Alamofire.ResponseSerializerType {
+public protocol JRSerializerType: Alamofire.ResponseSerializerType {
     
     typealias ContentsDecoderType: JRDecoderType
+
+}
+
+public protocol JRPageSerializerType: JRSerializerType {
     
     typealias PaginationDecoderType: JRPaginationDecoderType
     
+}
+
+public struct JSONSerializer<C: JRDecoderType>: JRSerializerType {
+    
+    public typealias ContentsDecoderType = C
+
+    public typealias SerializedObject = ContentsDecoderType.ContentType
+    
+    public typealias ErrorObject = JetRESTError
+    
+    public var serializeResponse: (NSURLRequest?, NSHTTPURLResponse?, NSData?, NSError?) -> Result<SerializedObject, ErrorObject>
+
+    init(contentsDecoder: C, options: NSJSONReadingOptions = .AllowFragments) {
+        serializeResponse = { request, response, data, error in
+            guard let response = response, let data = data where data.length > 0 else {
+                return Result.Failure(JetRESTError.ResponseError(underlyngError: error))
+            }
+            
+            do {
+                let JSON = try NSJSONSerialization.JSONObjectWithData(data, options: options)
+                let contents = try contentsDecoder.decode(try contentsDecoder.rawValue(serializedObject: JSON, response: response, data: data))
+                
+                return Result.Success(contents)
+            }
+            catch let e as NSError {
+                return Result.Failure(JetRESTError.SerializingError(underlyingError: e))
+            }
+        }
+    }
+
 }
 
 public struct JSONPageSerializer<C: JRDecoderType, P: JRPaginationDecoderType>: JRPageSerializerType {

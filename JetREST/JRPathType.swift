@@ -28,7 +28,7 @@ public extension JRPathType {
 
     func expandPath(dictionary dictionary: [String : AnyObject]) throws -> String {
         return try rawPath.componentsSeparatedByString("/").map { (component: String) -> String in
-            return component.isPattern ? try retrieveValue(fromDictionary: dictionary, keyPath: component.substringFromIndex(component.startIndex.advancedBy(1)).componentsSeparatedByString(".")).description : component
+            return component.isPattern ? try retrieveValue(fromDictionary: dictionary, keyPath: component.substringFromIndex(component.startIndex.advancedBy(1))).description : component
             }.joinWithSeparator("/")
     }
     
@@ -77,18 +77,10 @@ func retrieveValue(fromObject object: Any, keyPath: [String]) throws -> CustomSt
     }
 }
 
-func retrieveValue(fromDictionary dictionary: [String : AnyObject], keyPath: [String]) throws -> CustomStringConvertible {
-    var mutableKeyPath = keyPath
-    let key = mutableKeyPath.removeFirst()
-
-    if let object = dictionary[key] {
-        let mirror = Mirror(reflecting: object)
-        if case .Dictionary? = mirror.displayStyle {
-            return try retrieveValue(fromDictionary: object as! [String : AnyObject], keyPath: mutableKeyPath)
-        } else {
-            return try retrieveValue(fromObject: object, keyPath: mutableKeyPath)
-        }
-    } else {
-        throw JetRESTError.PatternSearchError(value: dictionary, key: key)
+func retrieveValue(fromDictionary dictionary: [String : AnyObject], keyPath: String) throws -> CustomStringConvertible {
+    guard let result = (dictionary as NSDictionary).valueForKeyPath(keyPath) where result is CustomStringConvertible else {
+        throw JetRESTError.PatternSearchError(value: dictionary, key: keyPath)
     }
+    
+    return result as! CustomStringConvertible
 }
